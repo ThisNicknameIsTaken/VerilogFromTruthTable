@@ -16,15 +16,20 @@ import random
 
 #---------------------------------------------------------------------------------------INPUT ARGUMENTS
 parser = argparse.ArgumentParser(description="Verilog truth table code generator")
-
-parser.add_argument("--mode",required=False, default=False,help = "(Optional, False by default) Output mode. BigEndian - True, LittleEndian - False", type=bool)
+parser.add_argument("--mode",required=False,default="LittleEndian", help = "(Optional, LittleEndian by default) Output mode.")
 parser.add_argument("--po",required=True,help="Path to generated table")
 parser.add_argument("--i",required=True,help="Amount of input signals",type=int)
 parser.add_argument("--o",required=True,help="Amount of output signals",type=int)
 
 console_arguments = parser.parse_args()
 
-BigEndian = console_arguments.mode
+BigEndian = False
+mode = console_arguments.mode
+if(mode == "BigEndian"):
+    BigEndian = True
+if(mode != "LittleEndian" and mode != "BigEndian"):
+    raise Exception("Wrong input of --mode argument")
+    
 full_output_path = console_arguments.po
 
 input_amount = console_arguments.i
