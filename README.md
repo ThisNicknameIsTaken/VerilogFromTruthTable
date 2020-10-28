@@ -43,7 +43,7 @@ To check if this script work correctly you can use testbench or .do file which I
 ### Table Generator tutorial
 
    * Type into --help to get quick help
-   ![image](https://user-images.githubusercontent.com/32493975/97481379-67428e00-195d-11eb-920f-53db07d7e4ab.png)
+   ![image](https://user-images.githubusercontent.com/32493975/97485995-847a5b00-1963-11eb-8232-66f89c94b896.png)
    
    * --po - path where to save your output truth table;
    * --i  - input amount of input signals you want to have;
