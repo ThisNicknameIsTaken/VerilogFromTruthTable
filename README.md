@@ -34,3 +34,28 @@ Converts .txt truth table into verilog module
     This will generate two files in specified path.
     
     ![image](https://user-images.githubusercontent.com/32493975/97480335-ee8f0200-195b-11eb-9841-af2e9297c2ae.png)
+    
+ 
+## Testing
+  
+To check if this script work correctly you can use testbench or .do file which I created to check modules created in previous example. Or you can create you own truth table for testing using TableGenerator.py script. It could be useful to generate big truth table, which could be coplicated to write with bare hands.
+  
+### Table Generator tutorial
+
+   * Type into --help to get quick help
+   ![image](https://user-images.githubusercontent.com/32493975/97481379-67428e00-195d-11eb-920f-53db07d7e4ab.png)
+   
+   * --po - path where to save your output truth table;
+   * --i  - input amount of input signals you want to have;
+   * --o  - input amount of output signals you want to have;
+   * --mode - (optional, little endian is by default), choose how to display input signals. True for little endian, False for big endian mode;
+   
+   Examples:
+   
+   * Little endian
+   ![image](https://user-images.githubusercontent.com/32493975/97485431-cc4cb280-1962-11eb-9644-b8b84ec5afac.png)
+   ![image](https://user-images.githubusercontent.com/32493975/97484947-18e3be00-1962-11eb-97c3-72e74794d4ef.png)
+   
+   * Big endian
+   ![image](https://user-images.githubusercontent.com/32493975/97485555-f605d980-1962-11eb-97f7-21f430d43e34.png)
+   ![image](https://user-images.githubusercontent.com/32493975/97482355-bb9a3d80-195e-11eb-86a9-e75dd8724897.png)
