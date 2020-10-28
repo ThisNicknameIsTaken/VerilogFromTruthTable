@@ -1,5 +1,6 @@
 # VerilogFromTruthTable
 Converts .txt truth table into verilog module 
+Written in Python 3
 
 ## Quick start
 1) To create verilog module from truth table you should input at least two required arguments:
