@@ -63,5 +63,5 @@ To check if this script work correctly you can use testbench or .do file which I
    ### ModelSim Testing
    In this section I will simulate testbench file for previously generated modules DDNF_8_5.v and DKNF_8_5.v. You can add slight modifictions to this file to test different amount of input and output signals. If DDNF and DKNF outputs are different the error flag will be 1.
    
-   ![image](https://user-images.githubusercontent.com/32493975/97493936-58b0a280-196e-11eb-8e27-92706badf17a.png)
+   ![image](https://user-images.githubusercontent.com/32493975/97494426-f7d59a00-196e-11eb-927b-f70436f067ce.png)
    ![image](https://user-images.githubusercontent.com/32493975/97494314-d07ecd00-196e-11eb-8ac3-8752b1191354.png)
