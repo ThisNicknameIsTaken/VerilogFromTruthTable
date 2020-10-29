@@ -6,7 +6,7 @@ Written in Python 3
 1) To create verilog module from truth table you should input at least two required arguments:
 
     * --pi - path to source truth table file;
-    * --po - path to save output verilog module;
+    * --po - path where to save output verilog module;
     
     ![image](https://user-images.githubusercontent.com/32493975/97477721-a6221500-1958-11eb-804d-1a8676cab986.png)
     
