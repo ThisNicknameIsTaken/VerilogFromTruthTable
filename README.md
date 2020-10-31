@@ -63,7 +63,7 @@ To check if this script work correctly you can use testbench or .do file which I
    ![image](https://user-images.githubusercontent.com/32493975/97776347-f0311380-1b6f-11eb-8fb0-4176b8dd12a0.png)
    ![image](https://user-images.githubusercontent.com/32493975/97776368-0b038800-1b70-11eb-8d24-5e4843e62998.png)
    
-   ### ModelSim Testing
+   ## ModelSim Testing
    In this section I will simulate testbench file for previously generated modules DDNF_8_5.v and DKNF_8_5.v. You can add slight modifictions to this file to test different amount of input and output signals. If DDNF and DKNF outputs are different from output values from truth table error flag will be rised. And in console you will get output of simulation. You can find this and a few more examples of testbench files in "Testing" folder.
    
    ![image](https://user-images.githubusercontent.com/32493975/97776681-d47b3c80-1b72-11eb-9fe0-1fc8f7afe3ae.png)
@@ -71,7 +71,7 @@ To check if this script work correctly you can use testbench or .do file which I
    ![image](https://user-images.githubusercontent.com/32493975/97776693-f1177480-1b72-11eb-83ab-4d9e0836a24e.png)
 
 
-### Hardware utilization
+## Hardware utilization
    Maximum that I was able to compile in Quartus was project with 14 input pins. Above that value I was getting StackOverlfow error.
    
    Flow Summary
