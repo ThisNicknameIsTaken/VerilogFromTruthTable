@@ -44,22 +44,24 @@ To check if this script work correctly you can use testbench or .do file which I
 ### Table Generator tutorial
 
    * Type into --help to get quick help
-   ![image](https://user-images.githubusercontent.com/32493975/97485995-847a5b00-1963-11eb-8232-66f89c94b896.png)
+   ![image](https://user-images.githubusercontent.com/32493975/97776194-c6c3b800-1b6e-11eb-824a-a360ba6be71b.png)
    
    * --po - path where to save your output truth table;
    * --i  - input amount of input signals you want to have;
    * --o  - input amount of output signals you want to have;
+   * --g  - (optional, turned on by default), if you want to create testbench file to compare output values of parsed modules with values from truth table this argument can be useful. It creates table only with values of output signals, so you can easily use $readmemb() function in your testbench file to check if all results are correct. Generated file will be named YourTableName_testbench_table.txt. 1 to turn on, 0 to turn off.
    * --mode - (optional, little endian is by default), choose how to display input signals. True for little endian, False for big endian mode;
    
    Examples:
    
-   * Little endian
+   * Little endian table with testbench_table.txt
    ![image](https://user-images.githubusercontent.com/32493975/97485431-cc4cb280-1962-11eb-9644-b8b84ec5afac.png)
-   ![image](https://user-images.githubusercontent.com/32493975/97484947-18e3be00-1962-11eb-97c3-72e74794d4ef.png)
+   ![tables](https://user-images.githubusercontent.com/32493975/97776314-b5c77680-1b6f-11eb-94df-b2122a929222.jpg)
    
-   * Big endian
-   ![image](https://user-images.githubusercontent.com/32493975/97485555-f605d980-1962-11eb-97f7-21f430d43e34.png)
-   ![image](https://user-images.githubusercontent.com/32493975/97482355-bb9a3d80-195e-11eb-86a9-e75dd8724897.png)
+   
+   * Big endian table without testbench_table.txt
+   ![image](https://user-images.githubusercontent.com/32493975/97776347-f0311380-1b6f-11eb-8fb0-4176b8dd12a0.png)
+   ![image](https://user-images.githubusercontent.com/32493975/97776368-0b038800-1b70-11eb-8d24-5e4843e62998.png)
    
    ### ModelSim Testing
    In this section I will simulate testbench file for previously generated modules DDNF_8_5.v and DKNF_8_5.v. You can add slight modifictions to this file to test different amount of input and output signals. If DDNF and DKNF outputs are different the error flag will be 1.
