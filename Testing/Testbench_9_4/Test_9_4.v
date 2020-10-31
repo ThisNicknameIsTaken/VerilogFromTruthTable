@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 module Test_9_4;
 
-
 reg clk;
 reg error;
 reg [8:0] i_x;
