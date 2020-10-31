@@ -69,3 +69,13 @@ To check if this script work correctly you can use testbench or .do file which I
    ![image](https://user-images.githubusercontent.com/32493975/97776681-d47b3c80-1b72-11eb-9fe0-1fc8f7afe3ae.png)
    
    ![image](https://user-images.githubusercontent.com/32493975/97776693-f1177480-1b72-11eb-83ab-4d9e0836a24e.png)
+
+
+### Hardware utilization
+   Maximum that I was able to compile in Quartus was project with 14 input pins. Above that value I was getting StackOverlfow error. Total time to compile 14bit table took almost 15 minutes.
+   
+   Flow Summary
+   ![image](https://user-images.githubusercontent.com/32493975/97778563-b4527a00-1b80-11eb-809f-f233f0653dbc.png)
+   
+   Flow Elapsed Time
+   ![image](https://user-images.githubusercontent.com/32493975/97778582-cf24ee80-1b80-11eb-9587-b5b5faa5325d.png)
