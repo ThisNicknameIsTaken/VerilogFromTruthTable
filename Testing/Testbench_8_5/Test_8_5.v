@@ -10,6 +10,7 @@ wire  [0:4] o_y_ddnf;
 reg [0:4] o_dknf;
 reg [0:4] o_ddnf;
 
+reg [0:4] current_table_value;
 reg [0:4] table_out[255:0];
 integer counter = 0;
 
@@ -33,18 +34,22 @@ o_dknf <= o_y_dknf;
 o_ddnf <= o_y_ddnf;
 end
 
+always @(counter) begin
+current_table_value <= table_out[counter];
+end
+
 always begin
 #10 clk = ~clk;
 end
 
 always @(posedge clk) begin
 
-
-if(o_dknf != table_out[counter]) begin
+ 
+if(o_dknf != current_table_value )begin
 	error = 1;
 	//$display("ERROR! DKNF");
 	//$finish;
- end else if(o_ddnf != table_out[counter]) begin 
+ end else if(o_ddnf != current_table_value )begin 
 	error = 1;
 	//$display("ERROR! DDNF");
 	//$finish;
@@ -52,7 +57,7 @@ if(o_dknf != table_out[counter]) begin
 	error = 0;
 end
 
-$display("%d		%b		%b		%b		%b		%b",counter,i_x,o_dknf,o_ddnf,table_out[counter],error);
+$display("%d		%b		%b		%b		%b		%b",counter,i_x,o_dknf,o_ddnf,current_table_value,error);
 
 if (i_x == 8'b1111_1111) begin
 	$finish;
@@ -64,3 +69,4 @@ end
 
 
 endmodule
+
