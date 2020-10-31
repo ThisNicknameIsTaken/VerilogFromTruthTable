@@ -22,7 +22,7 @@ vsim work.Test_13_8
 # Add all testbench signals to waveform diagram
 
 add wave /Test_13_8/clk
-add wave /TTest_13_8/error
+add wave /Test_13_8/error
 add wave /Test_13_8/i_x
 add wave /Test_13_8/o_y_dknf
 add wave /Test_13_8/o_y_ddnf
