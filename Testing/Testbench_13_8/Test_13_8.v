@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 module Test_13_8;
 
-
 reg clk;
 reg error;
 reg [12:0] i_x;
@@ -10,6 +9,8 @@ wire  [0:7] o_y_ddnf;
 reg [0:7] o_dknf;
 reg [0:7] o_ddnf;
 
+
+reg [0:7] current_table_value;
 reg [0:7] table_out[8191:0];
 integer counter = 0;
 
@@ -33,20 +34,21 @@ o_dknf <= o_y_dknf;
 o_ddnf <= o_y_ddnf;
 end
 
+always @(counter) begin
+current_table_value <= table_out[counter];
+end
+
 always begin
 #10 clk = ~clk;
 end
 
 always @(posedge clk) begin
 
-
-
-
-if(o_dknf != table_out[counter]) begin
+if(o_dknf != current_table_value) begin
 	error <= 1;
 	//$display("ERROR! DKNF");
 	//$finish;
- end else if(o_ddnf != table_out[counter]) begin 
+ end else if(o_ddnf != current_table_value) begin 
 	error <= 1;
 	//$display("ERROR! DDNF");
 	//$finish;
@@ -54,7 +56,7 @@ if(o_dknf != table_out[counter]) begin
 	error <= 0;
 	end
 
-$display("%d		%b		%b		%b		%b		%b",counter,i_x,o_dknf,o_ddnf,table_out[counter],error);
+$display("%d		%b		%b		%b		%b		%b",counter,i_x,o_dknf,o_ddnf,current_table_value,error);
 
 
 if (i_x == 13'b1111_1111_1111_1) begin
