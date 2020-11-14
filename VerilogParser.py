@@ -29,28 +29,22 @@ if(mode != "POS" and mode != "SOP"):
     raise Exception("Illegal mode value! It could be only SOP or POS or empty")
 
 
-#Checking output file parameters
-splited_out_path = full_output_path.split("\\")
 
 
-#Check if output path exists
-output_path = ""    #output path without module_name.v
-output_path_counter = 0
-for element in splited_out_path:
-    if(output_path_counter < len(splited_out_path) - 1):
-        output_path += splited_out_path[output_path_counter] + "\\"
-        output_path_counter += 1
+#---------------------------------------------------------Checking output path
 
-isOutputFolderExist = os.path.isdir(output_path)
-if not isOutputFolderExist:
-    raise Exception("No such folder for output file!")
+splited_out_path = os.path.split(full_output_path) #split path for head and tail (tail is file.extension rest is head)
+if(splited_out_path[0] != ''):
+    if(os.path.exists(splited_out_path[0]) == False):
+         raise Exception("No such folder for output file!")
 
-module_file_name = splited_out_path[len(splited_out_path) - 1]
+module_file_name = splited_out_path[1]
 module_file_name_splited = module_file_name.split(".")
 
 
 if(len(module_file_name_splited) < 2):
     raise Exception("Illegal output path. No file")
+
 
 module_name = module_file_name_splited[0]
 module_format = module_file_name_splited[1]
@@ -208,7 +202,7 @@ else:
                 output_assign_string += ";\n"
             counter += 1
 
-#print(output_assign_string)
+
 #------------------------------------------------------------------------------------------------
 
 
@@ -255,5 +249,3 @@ with  open(full_output_path,'w',encoding= 'utf-8') as module_file:
     module_file.write(output_string)
     module_file.write(output_assign_string)
     module_file.write(endmodule_string)
-
-
