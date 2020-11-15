@@ -123,6 +123,7 @@ if(mode == "SOP"):
     #searching 1 in outputs
     for o_index in output_indexes:
         
+        total_found = False
         prev_found = 0
         counter = 0
     
@@ -155,10 +156,14 @@ if(mode == "SOP"):
 
                     count_index += 1
 
+
                 output_assign_string += str
                 prev_found = 1
+                total_found = True
 
             if(counter == len(raw_data) - 1):
+                if(total_found == False):
+                    output_assign_string += "0"
                 output_assign_string += ";\n"
             counter += 1
 else:
@@ -166,6 +171,7 @@ else:
         
         prev_found = 0
         counter = 0
+        total_found = False
     
         for line in raw_data:
             if(counter == 0):
@@ -195,10 +201,14 @@ else:
 
                     count_index += 1
 
+               
                 output_assign_string += str
                 prev_found = 1
+                total_found = True
 
             if(counter == len(raw_data) - 1):
+                if(total_found == False):
+                    output_assign_string += "1"
                 output_assign_string += ";\n"
             counter += 1
 
