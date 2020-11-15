@@ -163,7 +163,7 @@ if(mode == "SOP"):
 
             if(counter == len(raw_data) - 1):
                 if(total_found == False):
-                    output_assign_string += "0"
+                    output_assign_string += "1'b0"
                 output_assign_string += ";\n"
             counter += 1
 else:
@@ -208,7 +208,7 @@ else:
 
             if(counter == len(raw_data) - 1):
                 if(total_found == False):
-                    output_assign_string += "1"
+                    output_assign_string += "1'b1"
                 output_assign_string += ";\n"
             counter += 1
 
